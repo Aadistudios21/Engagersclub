@@ -36,6 +36,13 @@
             cursor: pointer;
         }
     </style>
+    <script>
+        // JavaScript function to show the thank you message
+        function showThankYouMessage() {
+            document.getElementById("contact-form").style.display = "none";
+            document.getElementById("thank-you").style.display = "block";
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -67,6 +74,7 @@
             <textarea id="message" name="message" rows="4" required></textarea>
 
             <button type="submit">Submit</button>
+            <button type="submit" onclick="showThankYouMessage()">Submit</button>
         </form>
     </section>
 </body>
