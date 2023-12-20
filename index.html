@@ -91,6 +91,7 @@
         <a onclick="jumpToSection('home')">🏠</a>
         <a onclick="jumpToSection('Our Services')">💼</a>
         <a onclick="jumpToSection('contact-form')">✉️</a>
+        <button onclick="redirectToDiscord()">Go to Discord</button>
      </nav>
 
     <section id="home">
@@ -246,6 +247,11 @@
             if (section) {
                 section.scrollIntoView();
             }
+        }
+    </script>
+    <script>
+        function redirectToDiscord() {
+            window.location.href = "https://discord.gg/4ymgESfQ7K";
         }
     </script>
 </body>
