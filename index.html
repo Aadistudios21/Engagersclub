@@ -237,5 +237,13 @@
             nextSlide();
         }, 3000);
     </script>
+    <script>
+        function jumpToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView();
+            }
+        }
+    </script>
 </body>
 </html>
