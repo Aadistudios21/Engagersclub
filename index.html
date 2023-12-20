@@ -9,24 +9,34 @@
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         header {
             background-color: #001f3f;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
+        }
+        h1, h2, p {
+            margin: 0;
         }
         section {
             padding: 20px;
+            text-align: center;
         }
         form {
-            max-width: 400px;
+            max-width: 500px;
             margin: auto;
+            color: #000; /* Adjust form text color as needed */
         }
         input, textarea {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
             box-sizing: border-box;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
         button {
             background-color: #0074cc;
@@ -34,15 +44,14 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
+        }
+        .thank-you-message {
+            display: none;
+            color: #4CAF50; /* Green color for the thank you message */
+            margin-top: 10px;
         }
     </style>
-    <script>
-        // JavaScript function to show the thank you message
-        function showThankYouMessage() {
-            document.getElementById("contact-form").style.display = "none";
-            document.getElementById("thank-you").style.display = "block";
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -63,7 +72,7 @@
 
     <section>
         <h2>Contact Us</h2>
-        <form action="mailto : adityadangat018@gmail.com" method="post" enctype="text/plain">
+        <form id="contact-form" action="#" onsubmit="submitForm(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -74,8 +83,29 @@
             <textarea id="message" name="message" rows="4" required></textarea>
 
             <button type="submit">Submit</button>
-            <button type="submit" onclick="showThankYouMessage()">Submit</button>
         </form>
+
+        <!-- Thank you message -->
+        <div id="thank-you" class="thank-you-message">
+            Thank you for submitting your information!
+        </div>
     </section>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Placeholder for form submission logic
+            // You can add your logic here to send form data to your server or use a service like Formspree
+
+            // For now, just show the thank you message
+            showThankYouMessage();
+        }
+
+        function showThankYouMessage() {
+            document.getElementById("contact-form").style.display = "none";
+            document.getElementById("thank-you").style.display = "block";
+        }
+    </script>
 </body>
 </html>
