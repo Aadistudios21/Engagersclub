@@ -63,6 +63,17 @@
         <h2>About Us</h2>
         <p>We specialize in marketing through Twitter, Discord, and other social media platforms. With over 15 successful projects, we are dedicated to engagement and success.</p>
     </section>
+    <section class="image-slider">
+        <!-- Add your images to the "slide" divs -->
+        <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+        <!-- Add more slides as needed -->
+
+        <!-- Navigation buttons (optional) -->
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+    </section>
 
     <section>
         <h2>Connect with Us</h2>
@@ -106,6 +117,39 @@
             document.getElementById("contact-form").style.display = "none";
             document.getElementById("thank-you").style.display = "block";
         }
+    </script>
+    <script>
+        // JavaScript for image slider
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slider = document.querySelector('.image-slider');
+            const slides = document.querySelectorAll('.slide');
+
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100 + '%';
+            slider.style.transform = 'translateX(' + offset + ')';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Auto slide after 3 seconds (adjust as needed)
+        setInterval(() => {
+            nextSlide();
+        }, 3000);
     </script>
 </body>
 </html>
