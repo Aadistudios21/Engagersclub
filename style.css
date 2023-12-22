@@ -53,6 +53,7 @@ body {
         }
         nav {
             width: 100%
+            align-items: center;
             text-align: center;
             background-color: #000;
             padding: 10px;
